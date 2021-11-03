@@ -1,0 +1,209 @@
+---
+title: 'Getting Started with NLP of Research and Innovation Policy Data using R'
+subtitle: 'A Tutorial'
+author: 'By David Howoldt'
+url: https://www.linkedin.com/dhowoldt
+output:
+  html_document:
+    df_print: paged
+---
+
+This R tutorial uses a [STIP Compass dataset](https://oe.cd/STIPdatalab) for the quantitative analysis of texts on national science, technology and innovation (STI) policy initiatives. It demonstrates how you can quickly get started with natural language processing (NLP) methods using the quanteda package. The tutorial has three sections. The first section shows how to load packages providing functions that we need to work with the data into R, and how to download the dataset to be analyzed. The second section shows how to prepare the dataset to analyse descriptive textual information on policy initiatives. The third section shows a way to pre-process the text data, before conducting some basic analyses and suggesting further resources for NLP analysis. 
+
+## 1. Preparation: load R packages and download data
+
+First, we install and load two packages. 
+
+* The first package, [quanteda](https://quanteda.io/), contains functions for the quantitative of textual data - the subject of this tutorial. 
+
+* The second package, 'tidyverse', is really a set of packages. They help us to open the STIP dataset after downloading it, and allow for convenient data manipulation  
+
+
+```{r message=FALSE, warning=FALSE}
+if (!require(quanteda)){install.packages('quanteda')}
+if (!require(tidyverse)){install.packages('tidyverse')} 
+```
+
+
+First, we download the most recent STIP Compass dataset (this may take a while). The function 'here' takes care of specifying your working directory. Then, we read in the downloaded dataset. To see where R has stored the dataset, check the address of your working directory, just type
+'getwd()' in the R console. 
+```{r message=FALSE}
+url <- 'https://stip.oecd.org/assets/downloads/STIP_Survey.csv'
+
+#download the dataset
+download.file(url, destfile = 'stip.csv', mode = 'wb')
+
+#load the dataset into our working environment
+stip <- read_delim('stip.csv', '|', escape_double = FALSE, trim_ws = TRUE)
+```
+
+
+## 2. Prepare the dataset
+
+Next, we trim the dataset. In its initial form, policy initiatives can be included several times in the CSV file, once for each instrument that comes together with them. This makes the dataset hard to handle if we just want to look at policy initiatives. Moreover, most of its 800+ columns are about specific and detailed information for the instruments reported. As we do not need this information in this tutorial, we drop it as follows.
+```{r}
+#Most columns with info on instruments start with the Letter 'F' followed by a number. this removes all columns matching these characteristics
+stip <- stip[,!grepl('^[F][0-9]', (names(stip)))]
+
+#There are a few more columns with information on instruments. We remove them, too for the sake of coherence
+stip <- stip[,!grepl('Instrument', (names(stip)))]
+
+#This code identifies unique Initiative IDs. When multiple rows have the same initiative IDs, it retains only one of them. Since we have already removed all the information on instruments, no information is lost by retaining each initiative only once
+stip <- stip %>%
+  distinct(InitiativeID, .keep_all = T)
+```
+
+The first row of the dataset does not contain actual data, but descriptions of the variables. We extract this row and create a dataframe from it that we call our codebook. Then, we remove the first row of the dataset as we do not need it anymore. Then, we look at the codebook to get a first impression of the dataset. 
+```{r}
+codebook <- as.data.frame(t(stip[1,])) %>%
+  rownames_to_column()
+
+names(codebook) <- c('Variable', 'Code')
+
+#...remove the first row from the dataset: 
+stip <- stip[-1, ]
+
+#take a look at the codebook
+head(codebook) #The first few variables names are mostly self-explanatory 
+tail(codebook) #For other variables, the codebook is instructive (note that 'TG' stands for 'Target Group')
+```
+
+Some data cleaning: The 'InitiativeID' column contains a link that ends with an individual identifier for each initiative. We remove the link and retain only the identifying number.
+```{r}
+stip <- stip %>%
+  mutate(InitiativeID = as.numeric(gsub('http://stip.oecd.org/2019/data/policyInitiatives/', '', InitiativeID)))
+```
+
+
+
+
+
+
+
+## 3. Quantitative text analysis 
+
+This tutorial focuses on analysing textual data describing policy initiatives in the dataset. The STIP data has several columns with textual information. There is a 'Description' column, several 'Objectives' columns and a 'Background' column. We combine the columns with descriptions and objectives into a new, merged column. We do not include the column with background information, since in the survey, it is not mandatory to provide background information. Moreover, respondents use the "background" information in various ways and the information often is less descriptive of the initiative itself but rather elaborating on the context in which it was introduced.
+The new merged column contains in one place all the textual information to be analysed in this tutorial, for each inititiave. We will refer to data in this column as the "documents" that we will analyse.
+```{r}
+#this creates a vector with the names of all columns we wish to unite
+cols <- c('ShortDescription', names(stip)[grepl('Objectives', names(stip))])
+
+#this unites these columns in the new column 'all_texts'
+stip$all_texts <- apply(stip[ ,cols], 1, paste, collapse = ' ')
+
+#take a look at the first few new documents (i.e. the pieces of textual data that we will analyse)
+head(stip$all_texts, 3)
+```
+
+
+
+
+# 3.1. Prepare and pre-process textual data
+
+To analyse the text data on policy initiatives we first build a corpus from the newly created documents. In the corpus, each initiative has an associated document, identified by the initiative's ID. The information from all other columns in the STIP dataset becomes metadata to the documents.
+```{r}
+stip_corp <- corpus(stip, docid_field = 'InitiativeID', text_field = 'all_texts')
+
+#take a look
+stip_corp
+```
+
+
+Next, we create a document-feature matrix (dfm) from the corpus. Many techniques of quantitative text analysis use a dfm as their input. In the dfm, each row is a document, and each column is a word. Cells indicate the number of times a word appears in a document. The dfm does not retain the order of words in document. Rather, it treats documents as bags of words. 
+After creating the dfm, we remove numbers and english stopwords which are short function words (such as 'to', 'and', 'or'). We also remove all words with less than 3 characters. 
+```{r}
+stip_dfm <- dfm(stip_corp)
+
+stip_dfm <- stip_dfm %>%
+  dfm_remove(stopwords('english'), min_nchar = 3) %>%
+  dfm_remove(pattern = '(?<=\\d{1,9})\\w+', valuetype = 'regex' )
+
+#Take a look: This dfm has still more 10000 features
+stip_dfm  
+```
+
+
+Documents tend to contain a lot of information irrelevant for the analysis, such as stylistic and rare expressions. Often, it is a goal to reduce the number of features in the dfm during pre-processing. This makes it easier to conduct analyses and to arrive at clear-cut results. Therefore, we pre-process the dfm further, inter alia by reducing all words to their wordstem.
+```{r}
+stip_dfm  <- stip_dfm %>% 
+  dfm_wordstem() %>% #stem the dfm
+  dfm_trim(min_docfreq = 0.01,  docfreq_type = 'prop') %>% # retain only words included in at least 1% of documents
+  dfm_subset(ntoken(stip_dfm) >= 10) # remove documents with less than 10 words
+
+#Take a look again: Now, we have substantially reduced the number of features to less than 1000
+stip_dfm
+```
+
+The dataset also contains a column with innovation-related keywords for each initiative  (from a dedicated [vocabulary of concepts](https://stip.oecd.org/assets/downloads/STIPvocabulary.xlsx)). This is highly useful for the analysis, so we generate a second dfm from it. We generate this dfm in another way than the previous one since the unit of analysis in this case are not words, but keywords often consisting of multi-word expressions. 
+```{r}
+tag_dfm <- tokenizers::tokenize_regex(stip$Tags, pattern = '¬') %>%
+  as.tokens() %>%
+  dfm() %>%
+  dfm_remove(min_nchar = 3)
+
+rownames(tag_dfm) <- stip$InitiativeID
+docvars(tag_dfm) <- stip
+
+tag_dfm
+```
+
+
+
+# 3.2. Analyze textual data
+
+We can now analyze the two dfms in many ways, depending on our interest. A first step might be to look at the most common features in the dfm.
+```{r}
+textplot_wordcloud(stip_dfm)
+```
+
+We can also generate a wordcloud using the dataset's keywords: 
+```{r}
+textplot_wordcloud(tag_dfm, max_words =100, min_count=3,max_size = 2, min_size = .5)
+```
+
+An interesting question that we can ask is how does language in different subsets of policy initiatives differ. Many different subsets are conceivable. To give an example, we consider how word use in initiatives linked to the theme 'Financial support to business R&D and innovation' stand out in comparison to all other initiatives. Consulting the codebook that we have generated earlier, we can see that this theme corresponds to the variable 'TH31'. We use the first dfm (based on the merged column of the text data) which captures more fine-grained details on policy initiatives, compared to the second dfm (based on the dataset's keywords).
+```{r}
+fs_keyness <- textstat_keyness(stip_dfm, 
+                              target = stip_dfm$TH31 == 1)
+textplot_keyness(fs_keyness)
+```
+
+We can investigate the theme 'Financial support to business R&D and innovation' further by considering only documents in the dataset linked to this theme. Below, we create a subset dfm containing only documents on this theme and then compare the initiatives from Canada to all the others. We see that Canadian policy initiatives have a much stronger focus on female innovators that the average.
+```{r}
+fs_dfm <- dfm_subset(stip_dfm, stip_dfm$TH31 == 1) 
+  
+can_keyness <- textstat_keyness(dfm_remove(fs_dfm, pattern = c('canada', 'canadian')), 
+                              target = fs_dfm$CountryCode == 'CAN')
+
+textplot_keyness(can_keyness)
+```
+
+
+
+One of many other options is to compare the documents from different countries. The results of such a comparison should be treated with much caution since countries report information in different ways. For example, the comparison below does not consider whether some countries report more information on particular themes or survey questions than others. Moreover, this analysis assigns similar weight to all initiatives, although their budgets differ substantially. However, the analysis still reveals similarities between countries as one may expect. For instance, Germany and Austria come out as close to each other, so do the USA, Canada and Australia. 
+```{r}
+#create a dfm that merges all documents by country
+dfm_countries <- dfm_group(stip_dfm, groups = 'CountryCode')
+
+#computes distances between documents from different countries
+tstat_dist <- as.dist(textstat_dist(dfm_countries))
+
+#cluster countries based on these distances
+user_clust <- hclust(tstat_dist)
+
+plot(user_clust, cex = 0.5)
+```
+
+
+# Final notes: 
+
+* More advanced NLP analyses could leverage more information from the STIP dataset, including budget information, for better explorations of the dataset. 
+
+* Many online resources for NLP might help to analyse this dataset. Two of these are: 
+    + https://tutorials.quanteda.io/  
+    + https://www.structuraltopicmodel.com/
+
+
+
+
+
