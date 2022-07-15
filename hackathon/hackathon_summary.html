@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>Hackathon on data science for STI policy</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        img.banner {
+          width: 80%;
+          height: auto;
+        }
+    </style>
+</head>
+
+
+<body style="margin:15px;padding:15px;background-color:#FAFAFA">
+<br>
+    <h2><font color="4292c6"><strong>Hackathon on data science for STI policy</strong></font></h2>
+    <h3><font color="4292c6">A STIP Data Lab and OECD-TIP event | 23 May – 7 June 2022</font></h2>
+<br>
+<p style="font-size:16px;text-align:justify">
+<b>By Andrés Barreneche </b> <br>
+OECD Directorate for Science, Technology and Innovation <br>
+18 July, 2022
+</p><br>
+<p style="text-align:justify;margin-right:25%;font-size:18px">   
+<font color=#808080>
+    The OECD recently held its first hackathon on data science for Science, Technology and Innovation (STI) policy. The event, co-organised between <a href="https://stip.oecd.org/stip/pages/stipDataLab">STIP Data Lab</a> and the <a href="https://community.oecd.org/community/cstp/tip">OECD TIP Working Party</a><strong> created a new space for government officials, policy analysts and researchers to jointly experiment with new approaches to STI policy analysis by using the most recent techniques in data science</strong>. It also offered (post-) graduate students and researchers a unique opportunity to be exposed to and contribute to resolving real-world challenges presented by STI policy experts. The event featured natural language processing, machine learning, cluster analysis and other methods applied to policy analysis, which revealed patterns in how governments leverage STI to achieve policy objectives or how they tackle specific societal challenges.<br><br>
+    <strong>The hackathon demonstrated how such techniques can be used to summarise, compare and contrast corpuses of text documents&nbsp;</strong>describing strategic policy goals and initiatives into a reduced number of salient themes. It was useful to experiment with the new avenues data science is opening up for evidence-based policy research and advice. This document presents and summarises the projects conducted by postgraduate students and researchers from around the world and explains how the hackathon was organised.<br><br>
+</font>
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <img src="https://stiplab.github.io/datastories/hackathon/STIP-Hackathon-1.png" width="800" alt="Banner">
+</p><br>
+
+
+    <h3><font color="4292c6">How did the hackathon work?  </font></h3>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">   
+    <strong>OECD delegates and policy analysts led teams from six research institutions located in the US, Europe and Asia</strong>: Aalborg University, Fraunhofer Institute ISI, Georgia Institute of Technology, Korea Advanced Institute of Science and Technology, the Science Policy Research Unit (SPRU) at the University of Sussex and Tokyo University. Team leaders worked with the OECD Committee for Scientific and Technological Policy (CSTP) or with some of its working parties: the Innovation and Technology Policy (TIP), National Experts on Science and Technology Indicators (NESTI), and the Global Science Forum. <br>
+</p>
+
+<p style="text-align:justify;margin-left:5%;margin-right:25%">   
+    <strong>Team leaders formulated a policy question for their teams to address</strong> (Table 1) using two main data sources: the <a href="https://stip.oecd.org">STIP Compass policy database</a> and the <a href="https://www.dropbox.com/s/vd4ky6kv1a3cmho/strategies_final.RData?dl=0">TIP STI database on national strategies</a>, possibly in conjunction with the <a href="https://www.oecd.org/sti/scoreboard.htm">STI.Scoreboard database</a>. Policy questions were designed to be directly relevant to ongoing projects conducted by the CSTP and its working parties. In addition, the organising team helped to shape the questions to make them feasible to tackle using the datasets made available for the hackathon.<br><br>
+</p>
+
+
+<p style="text-align:justify;margin-left:5%;margin-right:25%;font-size:14px">
+    <b>Table 1. Hackathon participants and their policy questions </b><br>
+        <table style="border: none;border-collapse:collapse;margin-left:5%;margin-right:25%">
+            <tbody>
+                <tr>
+                    <td style="border-top:none;border-left:none;border-bottom:  solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt;"><br></td>
+                    <td colspan="2" style="border-top:solid windowtext 1.0pt;border-left:none;border-bottom:none;border-right:solid windowtext 1.0pt;background:#5B9BD5;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:normal;font-size:15px;font-family:"Calibri",sans-serif;text-align:center;'><strong><span style='font-size:14px;color:white;'>TEAM LEADER (TL)</span></strong></p>
+                    </td>
+                    <td colspan="2" style="border:none;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt;"><br></td>
+                </tr>
+                <tr>
+                    <td style="border:none;border-bottom:solid windowtext 1.0pt;background:#5B9BD5;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-size:14px;color:white;'>Team</span></strong></p>
+                    </td>
+                    <td style="border:none;border-bottom:solid windowtext 1.0pt;background:#5B9BD5;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-size:14px;color:white;'>Team Leader</span></strong></p>
+                    </td>
+                    <td style="border:none;border-bottom:solid windowtext 1.0pt;background:#5B9BD5;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-size:14px;color:white;'>TL Organisation</span></strong></p>
+                    </td>
+                    <td style="border-top:solid windowtext 1.0pt;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;background:#5B9BD5;padding:0cm 5.4pt 0cm 5.4pt;height:12.75pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-size:14px;color:white;'>Policy question</span></strong></p>
+                    </td>
+                    <td style="border:none;padding:0cm 0cm 0cm 0cm;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Aalborg University</span></p>
+                    </td>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Tiago Santos Pereira (TIP)</span></p>
+                    </td>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Centre for Social Studies, University of Coimbra</span></p>
+                    </td>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>To what extent can we identify distinct instruments and country policy goals that reflect a novel <strong>co-creation</strong> approach vs. a more traditional knowledge-transfer approach?&nbsp;</span></p>
+                    </td>
+                    <td style="border:none;padding:0cm 0cm 0cm 0cm;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Fraunhofer Institute</span></p>
+                    </td>
+                    <td style="padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Joseba Sanmart&iacute;n (NESTI)</span></p>
+                    </td>
+                    <td style="padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Spanish Foundation for Science and Technology (FECYT)</span></p>
+                    </td>
+                    <td style="padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>In what ways do STI strategies differ between countries around the theme of <strong>sustainability (climate change)</strong> and, in particular, around the <strong>energy innovation system</strong>?</span></p>
+                    </td>
+                    <td style="border:none;padding:0cm 0cm 0cm 0cm;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Georgia Institute of Technology</span></p>
+                    </td>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Caroline Paunov (TIP)</span></p>
+                    </td>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>OECD</span></p>
+                    </td>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>To what extent are countries&rsquo; <strong>green transition goals</strong>, as set out in their strategies, reflected in their STI policies?&nbsp;</span></p>
+                    </td>
+                    <td style="border:none;padding:0cm 0cm 0cm 0cm;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Korea Advanced Institute of Science and Technology</span></p>
+                    </td>
+                    <td style="padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Alan Paic (CSTP)</span></p>
+                    </td>
+                    <td style="padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>OECD</span></p>
+                    </td>
+                    <td style="padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Can we characterise typologies of policies in support of making <strong>research data from publicly funded research openly accessible&nbsp;</strong>and reusable to the largest extent possible?</span></p>
+                    </td>
+                    <td style="border:none;padding:0cm 0cm 0cm 0cm;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Science Policy Research Unit (SPRU), University of Sussex&nbsp;</span></p>
+                    </td>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Daniel Ferreira<br>&nbsp;(GSF)</span></p>
+                    </td>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Portuguese National Funding Agency for Science, Research and Technology (FCT)</span></p>
+                    </td>
+                    <td style="background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>To what extent is it possible to characterise typologies of policy proposals on the theme of <strong>scientific employment and research careers</strong>?&nbsp;</span></p>
+                    </td>
+                    <td style="border:none;padding:0cm 0cm 0cm 0cm;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border:none;border-bottom:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Tokyo University</span></p>
+                    </td>
+                    <td style="border:none;border-bottom:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>Philippe Larrue<br>&nbsp;(CSTP)</span></p>
+                    </td>
+                    <td style="border:none;border-bottom:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>OECD</span></p>
+                    </td>
+                    <td style="border:none;border-bottom:solid windowtext 1.0pt;padding:0cm 5.4pt 0cm 5.4pt;height:42.1pt;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:.0001pt;margin-left:0cm;line-height:  normal;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-size:14px;color:black;'>What information is provided in strategies about <strong>policy implementation</strong>, such as specific goals, timelines, budgetary commitments or policy actions and/or their governance/monitoring?</span></p>
+                    </td>
+                    <td style="border:none;padding:0cm 0cm 0cm 0cm;">
+                        <p style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;margin-left:0cm;line-height:107%;font-size:15px;font-family:"Calibri",sans-serif;'>&nbsp;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>    
+        <br>
+</p>
+
+    <p style="text-align:justify;margin-left:5%;margin-right:25%">   
+        <a href="https://www.linkedin.com/in/einhoff/">@Jan</a> and I set up <a href="https://github.com/STIPlab/hackathon">a dedicated GitHub repository</a> to provide more details about the three datasets, together with guidance and examples for accessing and leveraging them in analyses using Python and R. Teams also had the possibility to ask questions and upload their materials using this repository. <strong>Over the course of two weeks, teams were asked to devote at least two full days (equivalent) of work time to tackle their question.&nbsp;</strong>Knowing that teams only had limited availability during the hackathon, it was made clear that no definitive answers were expected. Rather, the desired goal of the hackathon was for them to propose one or more innovative approaches and possibly feature some initial observations from the data.<br><br>
+    </p>
+
+    <h3><font color="4292c6">What were the outcomes of the hackathon?</font></h3>
+
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    During the 7 June closing event, teams gave ten-minute presentations summarising their ideas and findings. From the outset it became clear that <strong>teams devoted considerable efforts, well beyond our expectations, to come up with a variety of methodologies to tackle real policy questions</strong>.<br><br>
+</p>     
+
+    <h4><font color="4292c6">Aalborg University</font></h4>
+
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <strong>The Aalborg University team was tasked with identifying policy goals and approaches that reflect a novel co-creation approach for research and innovation</strong>, as opposed to the traditional knowledge-transfer approach. To achieve this, they worked with their team leader to devise a classification strategy using representative keywords, i.e. for co-creation (e.g. co-funding, multilateral, platforms) and for knowledge transfer (e.g. bilateral, innovation vouchers, spin-off). This strategy suggests a proliferation of the co-creation approach in STIP Compass policy initiatives starting in 2015. It also allowed the team to identify salient features of co-creation policies. For instance, they tend to jointly address a higher variety of joint beneficiaries and policy themes. The team also proposed a <a href="https://medium.com/sfu-cspmp/nlp-word-embedding-techniques-for-text-analysis-ec4e91bb886f">word2vec word embedding</a> approach to calculate the pairwise similarity between policy initiatives. Using these similarities, they built a network of policies to identify thematic clusters making a recurrent use of co-creation keywords, such as climate change, COVID-19 and artificial intelligence.<br><br>
+    <iframe width="720" height="405" src="https://www.youtube.com/embed/K6oSGPcnpQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <a href="https://github.com/STIPlab/hackathon/tree/main/team_Aalborg"><strong>Access the Aalborg University team’s presentation, R/Python code and other materials.</strong></a><br><br>
+</p>
+        
+    <h4><font color="4292c6">Fraunhofer Institute ISI</font></h4>
+        
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <strong>The Fraunhofer Institute ISI team aimed to identify trends in national strategies that are relevant for the energy transition</strong>. To this end, they used the definition proposed for such policies in the STIP Compass database to extract pivot sentences. This allowed them to build a model that classifies sentences in the TIP strategies corpus as relevant for the energy transition. These relevant sentences were semantically analysed using <a href="https://towardsdatascience.com/topic-modeling-with-bert-779f7db187e6">BERT topic modelling</a>, allowing the team to isolate the main strategic themes in the text such as hydrogen technologies, transportation and waste management, among others. In a second step, they applied the language model to the STIP Compass dataset, to explore the policy coherence between both datasets. Among other patters, they found that countries raise the energy transition more frequently in policies supporting the public research system as opposed to those that support business innovation.<br><br>
+    <iframe width="720" height="405" src="https://www.youtube.com/embed/fbeoAzzavEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <a href="https://github.com/STIPlab/hackathon/tree/main/team_Karlsruhe"><strong>Access the Fraunhofer Institute ISI team’s presentation.</strong></a><br><br>
+</p>
+        
+    <h4><font color="4292c6">Georgia Institute of Technology</font></h4>
+        
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <strong>The Georgia Institute of Technology team compared goals for the green transition, as set out in national strategies, with the actual policy initiatives countries have in place</strong>. To tackle this challenge, they started by splitting the +300 strategies in the TIP corpus into +380k sentences. The team scanned 800 of these sentences and assessed whether they were related to green transitions or not. They used this as the &ldquo;ground truth&rdquo; training set to train a <a href="https://towardsdatascience.com/topic-modeling-with-bert-779f7db187e6">BERT language model</a> that estimated the probability for the remaining sentences in the TIP corpus to be relevant. The team used this model to describe the strategies corpus and STIP Compass policy initiative data, proposing metrics that estimated how intensively countries address transition goals and how broad the thematic scope of such goals is.<br><br>
+    <iframe width="720" height="405" src="https://www.youtube.com/embed/h9lQTmDU-i4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <a href="https://github.com/STIPlab/hackathon/tree/main/team_Atlanta"><strong>Access the Georgia Tech team’s presentation.</strong></a><br><br>
+</p>
+        
+    <h4><font color="4292c6">Korea Advanced Institute of Science and Technology</font></h4>
+        
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <strong>The Korea Advanced Institute of Science and Technology (KAIST) team sought to identify typologies of policies in support of open science and enhanced access to publications and research data.</strong> They used the taxonomies proposed by the STIP Compass data model to characterise the various instruments that countries have introduced in this field. For instance, the team observed that most national strategies in support of open science have limited degree of coordination in their implementation. However, they propose various monitoring mechanisms such as periodic reporting or evaluation, dedicated budget allocations, a dedicated monitoring public body, or a combination of these. The team also explored topic modelling to identify emerging open science themes in the TIP strategies corpus and the STIP Compass data, such as international cooperation, public research and business innovation.<br><br>
+    <iframe width="720" height="405" src="https://www.youtube.com/embed/ElN3PuVRnic" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <a href="https://github.com/STIPlab/hackathon/tree/main/team_Daejeon"><strong>Access the KAIST team’s presentation and Python code.</strong></a><br><br>
+</p>
+        
+    <h4><font color="4292c6">University of Sussex’s Science Policy Research Unit</font></h4>
+        
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <strong>The team from the University of Sussex&rsquo;s Science Policy Research Unit (SPRU) identified typologies of policies with a focus on scientific employment and research careers</strong>. To this end, they decided to leverage the relevant slice of the STIP Compass dataset for semantic analysis. This analysis consisted of calculating a TFIDF (term frequency-inverse document frequency) matrix using the text found in the initiatives&rsquo; description and objective fields. They then applied a <a href="https://medium.com/@zullinira23/implementation-of-principal-component-analysis-pca-on-k-means-clustering-in-r-794f03ec15f">PCA analysis</a> to identify two components that explained 20% of the variance of the TFIDF matrix. Using <a href="https://medium.com/@zullinira23/implementation-of-principal-component-analysis-pca-on-k-means-clustering-in-r-794f03ec15f">k-means clustering</a>, countries were grouped by their similar policy mixes across the two components. This allowed the team to identify clusters in policy mixes around employment creation, research capabilities, gender equality and private sector research.<br><br>
+    <iframe width="720" height="405" src="https://www.youtube.com/embed/dbevPQ7GJSI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <a href="https://github.com/STIPlab/hackathon/tree/main/team_Sussex"><strong>Access the SPRU team’s presentation and R code.</strong></a><br><br>
+</p>
+        
+    <h4><font color="4292c6">Tokyo University</font></h4>
+        
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <strong>The Tokyo University team had the task to analyse implementation plans in national strategies,</strong> whether by setting out specific targets, timelines, budget allocations, follow-up mechanisms or a combination of these. In a first step, the team sought to identify relevant sections (blocks of texts) in the TIP corpus of strategies using a list of keywords indicative of implementation. These sections of the text were then analysed using topic modelling, in view of identifying relevant themes such as public finance, assessment/evaluation, and education and training, among others. Using this model, the team calculated pairwise country similarities in their approach to strategy implementation. The team also extended their approach to identify strategies proposing specifically a mission-oriented approach. They found that such missions recurrently address the topics of carbon emissions, energy and digitalisation, among others.<br><br>
+    <iframe width="720" height="405" src="https://www.youtube.com/embed/qs5P5b82n_I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <a href="https://github.com/STIPlab/hackathon/tree/main/team_Tokyo"><strong>Access the Tokyo University team’s presentation and Python code.</strong></a><br><br>
+</p>
+        
+        <h3><font color="4292c6">How was the hackathon organised?</font></h3>
+        
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    <ol style="list-style-type: undefined;">
+        <li><strong>Contacting research institutions</strong> <strong>with a known background in applied data science</strong> for STI policy analysis. The OECD shared a hackathon concept note to explore their interest in participating. Research institutions formed teams of 4-8 members including MSc. and PhD students and postgraduates.</li>
+        <li><strong>Requesting research institutions&rsquo; available dates</strong> for kicking-off, working in and closing the hackathon.</li>
+        <li><strong>Contacting delegates and senior analysts&nbsp;</strong>available and willing to take-up the role as team leaders and formulate a policy question (with the organising team&rsquo;s guidance).</li>
+        <li><strong>Setting up a dedicated GitHub repository</strong> providing the necessary guidance and examples to access the datasets to be used during the hackathon. The &ldquo;Issues&rdquo; tab allowed teams to ask questions around the datasets, which automatically prompted the right member for the organising team for an answer (email notification).</li>
+        <li><strong>The kick-off event introduced the hackathon&rsquo;s datasets and the specific policy questions</strong> each team would tackle. Teams had the opportunity to discuss the question with their team leader.</li>
+        <li><strong>Teams worked in the hackathon</strong> <strong>over the course of two weeks</strong>, organising one or two sprint meetings with their team leader to discuss progress and receive feedback.</li>
+        <li><strong>Teams were invited to prepare 10-minute presentations</strong> summarising their work for the closing event.</li>
+        <li><strong>The OECD organised a separate technical workshop where teams were able to elaborate and exchange on their methodologies</strong> following the closing event. This allowed teams to debrief and discuss the models, model parameters, software packages, libraries and other technical choice they made during the hackathon.</li><br>
+    </ol>
+</p>     
+            
+        <h3><font color="4292c6">Learn more about data science for STI policy analysis</font></h3>
+
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+    If you would like to access more resources and materials for STI policy research and advice, please visit the <a href="https://stip.oecd.org/stip/pages/stipDataLab">STIP Data Lab</a> and the <a href="https://community.oecd.org/community/cstp/tip">OECD TIP Working Party</a> pages. You are also welcome to contact us at <a href="mailto:stipolicy.data@oecd.org">stipolicy.data@oecd.org</a>.
+</p>
+
+</body>
+</html>
