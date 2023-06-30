@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using STIP Compass for comparative analysis: Lessons learned from two pilot studies</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        img.banner {
+          width: 80%;
+          height: auto;
+        }
+    </style>
+</head>
+
+
+<body style="margin:15px;padding:15px;background-color:#FAFAFA">
+<br>
+<h2><font color="4292c6"><strong>Using STIP Compass for comparative analysis:<br>Lessons learned from two pilot studies</strong></font></h2>
+<br>
+<p style="font-size:16px;text-align:justify">
+<b>By Andrés Barreneche and Gildas Ehrmann </b> <br>
+OECD Directorate for Science, Technology and Innovation <br>
+22 June, 2023
+</p><br>
+<p style="text-align:justify;margin-right:25%;font-size:18px">   
+<font color=#808080>
+<a href="https://stip.oecd.org/" rel="noreferrer" target="_blank">STIP Compass</a> provides a wealth of information on more than 10k ongoing and recently ceased policy initiatives for 57 countries and the European Union. The portal’s interactive dashboards let users seamlessly browse data on 6.5k active policies by country, theme, target group, and policy instrument. Country dashboards, for example, provide an overview of the ministries and public bodies that manage STI policies, the leading national strategies, and the most significant policy initiatives (by budget). Users can also zoom into specific policy areas, for instance, to browse policies specific to the country’s public research system. 
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+<img src="https://stiplab.github.io/datastories/comparative-analysis/image1.png" width="800" alt="Banner">
+</p><br>
+<p style="text-align:justify;margin-right:25%;font-size:18px">   
+While such dashboards provide a helicopter view of the policy landscape, they do not summarise or benchmark the types of policies countries have in place. This means users of the web portal interested in higher-level abstractions of the data can be overwhelmed by the amount of information. Policymakers and policy analysts would like to leverage the rich dataset to quickly obtain country overviews in specific policy areas and compare countries against one another. For example, they would like to ask the database how often business innovation policies tackle societal challenges in a given country compared to others. 
+<br><br>
+To meet needs like these, the STIP Data Lab has conducted two experimental analyses to explore how data in STIP Compass could be better synthesised and used to compare country policy mixes. This note describes the work performed in these two pilots, the feedback provided by national experts on their preliminary results, and the lessons learned for future work. 
+<br><br>
+</font>
+<h3><font color="4292c6">Pilot 1: Mapping public research policies through STIP Compass’s taxonomies </font></h3>
+<br>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">   
+STIP Compass contains information in structured data fields that group initiatives across taxonomies of policy instruments, target groups (direct beneficiaries), and different budget ranges for yearly expenditures. Moreover, each policy instrument has several sub-fields (also part of the taxonomy) used to characterise essential aspects of its design and implementation. For example, Australia’s <a href="https://stip.oecd.org/stip/interactive-dashboards/policy-initiatives/2021%2Fdata%2FpolicyInitiatives%2F99992260" rel="noreferrer" target="_blank">Boosting the Next Generation of Women in STEM</a> initiative addresses the ‘Gender balance and inclusiveness’ theme, is directed at ‘Women’ as a target group and has an estimated yearly budget expenditure of between 5M-20M EUR. The initiative uses ‘Fellowships and postgraduate loans and scholarships’ as a policy instrument, providing non-repayable financial assistance to support graduate and postgraduate students and established researchers.
+<br><br>
+A first pilot study developed visualisations that used such taxonomies to aggregate and summarise policy initiative data. It focused on selected countries with relatively high data quality compared to others in the database. The pilot developed Python code to visualise detailed aspects of public research policies, such as their governance by ministries and funding agencies, how much budget they tend to allocate and whether funding targets individual researchers or public research organisations. It also explored how the selected countries used related policy instruments: institutional funding for public research, project grants for public research and dedicated support to research infrastructure. 
+<br><br>
+An example of the pilot’s preliminary analysis is shown in Figure C.1, which measures how much national policies target individual researchers (including primarily established researchers, postdocs and researchers) versus organisations (public research institutes or higher education institutes) in selected countries. It has been built by aggregating public research initiatives (weighted by budget). The colour shading indicates the extent to which the reported initiatives have budget information, with dark red signalling funding details available for all and light-yellow evidencing largely missing funding details. The number of initiatives that make up the sample is indicated in brackets next to the country label.
+<br><br>
+
+</p>
+
+<p style="text-align:justify;margin-left:5%;margin-right:25%;font-size:14px">
+<b>Figure C.1. Sample preliminary result: Country focus on target groups, public research system policy initiatives 
+</b><br><br>
+<img src="https://stiplab.github.io/datastories/comparative-analysis/image2.png" width="800" alt="Figure C.1. Sample preliminary result: Country focus on target groups, public research system policy initiatives">
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%;font-size:12px">
+<b>Source:</b> EC-OECD (2022), STIP Compass: International Database on Science, Technology and Innovation Policy (STIP), edition March 2, 2022, <a href="https://stip.oecd.org">https://stip.oecd.org</a>
+<br><br>
+</p>
+
+<h3><font color="4292c6">Pilot 2: Identifying overarching business innovation policy objectives using Natural Language Processing</font></h3><br>
+
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+STIP Compass also contains unstructured information (text data) on policy initiative names, main descriptions, objectives, and backgrounds. A second pilot used Natural Language Processing (NLP) to analyse these texts and identify the most salient topics in policies supporting business innovation. NLP involves the automatic processing of textual data for purposes of semantic analysis. The pilot built a corpus of 350k words from relevant policy initiatives to recognise keywords and calculate how these relate to others to form cluster topics. This approach aimed (i) to compare how countries emphasise such topics in the policies they report in the STIP Compass database, and (ii) to evaluate whether such emphasis has varied over time.
+<br><br>
+Using topic modelling, the pilot identified six main types of policy objectives:
+
+ </p>     
+<ul style="text-align:justify;padding-left:10%;margin-right:25%">
+     <li>
+         <p>Science-industry collaborations</p>
+     </li>
+     <li>
+         <p>Access to finance</p>
+     </li>
+     <li>
+         <p>Entrepreneurship & business support services</p>
+     </li>
+     <li>
+         <p>Stimulating demand for innovation</p>
+   </li>
+     <li>
+         <p>Tax incentives for R&D and innovation</p>
+         </li>
+     <li>
+         <p>Industrial technology development</p>
+   </li>
+     <li>
+         <p>Tackling societal challenges</p>
+</ul>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+In a second step, the analysis calculated how frequently such topics were raised in selected countries (known for having higher quality data, as in the previous pilot). Comparing such frequencies meant countries’ business innovation policy mixes could be profiled across the three last editions of the database (i.e. 2017, 2019 and 2021). Such profiles suggest that national policies often focus on specific policy issues. In principle, this focus provides a basis for cross-country comparisons of policy priorities and to detect their shifts over time.
+<br><br>
+Preliminary profiles for two policy mixes are shown in Figure C.2 and Figure C.3 for reference. They compare the frequency of specific topics selected countries mentioned in the 2017 and 2021 editions of the STIP Survey responses. The label "Topic less prevalent" marks topics that are 50% less frequent than the OECD median. Similarly, the label "Topic more prevalent" marks topics that are 50% more frequent compared to the OECD median. Large shifts over time suggest an increase or decrease in the emphasis given to a particular topic in the country’s mix of initiatives relative to the OECD median.
+<br><br>
+
+</p>
+
+<p style="text-align:justify;margin-left:5%;margin-right:25%;font-size:14px">
+<b>Figure C.2. Preliminary mapping of the STI policy mix: Science-industry collaborations
+</b><br><br>
+<img src="https://stiplab.github.io/datastories/comparative-analysis/image3.png" width="800" alt="Figure C.2. Preliminary mapping of the STI policy mix: Science-industry collaborations">
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%;font-size:12px">
+<b>Source:</b> EC-OECD (2022), STIP Compass: International Database on Science, Technology and Innovation Policy (STIP), edition March 2, 2022, <a href="https://stip.oecd.org">https://stip.oecd.org</a>
+<br><br>
+
+</p>
+
+<p style="text-align:justify;margin-left:5%;margin-right:25%;font-size:14px">
+<b>Figure C.3. Preliminary mapping of the STI policy mix: Tackling societal challenges
+</b><br><br>
+<img src="https://stiplab.github.io/datastories/comparative-analysis/image4.png" width="800" alt="Figure C.3. Preliminary mapping of the STI policy mix: Tackling societal challenges">
+</p>
+<p style="text-align:justify;margin-left:5%;margin-right:25%;font-size:12px">
+<b>Source:</b> EC-OECD (2022), STIP Compass: International Database on Science, Technology and Innovation Policy (STIP), edition March 2, 2022, <a href="https://stip.oecd.org">https://stip.oecd.org</a>
+<br><br>
+</p>
+
+
+<h3><font color="4292c6">Views from national experts on the two pilot studies</font></h3><br>
+
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+ National experts were invited to review the two pilots and their preliminary results. More specifically, this involved asking STIP database national contact points and country delegates to the OECD Committee for Scientific, Technological and Innovation Policy (CSTP) for their views on these experiments. National experts were asked to assess whether:
+ 
+ </p>     
+<ul style="text-align:justify;padding-left:10%;margin-right:25%">
+     <li type="1">
+         <p>The comparisons presented in the pilots were informative and of interest.</p>
+     </li>
+     <li type="1">
+         <p>The policy profiles presented in the pilots aligned with their perception of their country’s research and innovation system.</p>
+         </ul>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+Nine sets of comments were received from experts in Australia, Canada, France, Germany, Korea and Japan. There was a broad consensus across the following points:
+
+ </p>     
+<ul style="text-align:justify;padding-left:10%;margin-right:25%">
+     <li>
+         <p>Experts appreciated the pilots’ proposed avenues to synthesise country information and the possibilities they offer for cross-country comparisons. They confirmed an interest in the policy mixes the pilots identified and characterised in the areas of public research and business innovation. Experts think the pilots proposed valuable indicators that position national policy approaches and benchmark them with those of other countries.</p>
+     </li>
+     <li>
+         <p>Generally, experts thought the methods used by the pilots were appropriate. A few questions emerged around the NLP method used in the second pilot, i.e. how well it performed in summarising the data and the robustness or stability of the results yielded by the topic model. The pilot would need to address such questions to clarify the reliability of the model and its findings.</p>
+     </li>
+     <li>
+         <p>Experts agreed in some instances with how their national policy mixes were mapped. However, they all disputed how the pilots portrayed one or more dimensions of their policy mix. For example, when the pilots suggested that their policy mix lagged in a given dimension (compared to other countries), various experts offered several examples of policies not included in the database as a possible explanation for the reported result.</p>
+     </li>
+     <li>
+         <p>Experts also pointed out differences in how countries report their policy data as an obstacle for comparative analysis. For instance, some countries lump several policy efforts into a single initiative, whereas others report similar efforts as separate initiatives. The level of detail of the information reported in policy initiatives also varies widely by country. While the pilots attempt to account for such differences,* they do not fully resolve them, and thus their results may be biased. </p>
+         </ul>
+         <br><br>
+         
+<h3><font color="4292c6">Lessons for comparative analysis using STIP Compass data</font></h3><br>
+<p style="text-align:justify;margin-left:5%;margin-right:25%">
+The pilot studies revealed two significant obstacles in leveraging the STIP Compass dataset to build comparative indicators and map policy mixes: (i) the sample of policies found in the STIP Compass database is not fully representative of the actual population of policies, and (ii) the differences in how countries report their policies leads to biases in subsequent analyses. To help overcome these obstacles, future analyses need to be co-designed and co-produced in close collaboration with country experts. Their contribution is essential to filling data gaps and ensuring that the policy data is representative of the country’s actual population of policies. Furthermore, focusing on narrower and more pressing policy issues (e.g. net zero, research security) would be preferable, with a view to limiting the reporting burden on government officials and to make such studies attractive for them to contribute.
+<br><br>
+The limitations exposed by these pilots do not exclude other types of analyses of STIP Compass data that rely less on the assumption of data representativeness. For example, government officials often highlight the value of STIP Compass as a rich source of information on various policy options to address a given policy objective. To facilitate such insights, the STIP Data Lab could systematically examine the policy patterns found in the database, as demonstrated in other <a href="https://stip.oecd.org/stip/data-stories" rel="noreferrer" target="_blank">data stories</a>. Such analyses leverage the policy database without relying on it being representative of the actual population of policies. In another example, the recently held  <a href="https://stiplab.github.io/datastories/hackathon/hackathon_summary.html" rel="noreferrer" target="_blank">hackathon on data science for STI policy</a> demonstrated the use of emerging research tools, including NLP, machine learning and cluster analysis, to analyse the STIP Compass database to explore a mix of policy issues. It hosted various experiments showing how these tools can be used to summarise, compare and contrast policy text data. These methods provide new opportunities to reveal patterns in how governments leverage STI to achieve policy objectives and tackle specific societal challenges.
+<br><br>
+<br><br>
+* For example, the first pilot explored how initiatives were distributed across multiple responsible organisations (ministries or agencies that fund or manage the initiative). The idea was to check whether countries have only a few organisations managing most initiatives or if a greater number of bodies are involved. To account for how the number of initiatives varies by country, the pilot normalised such calculations by the total number of initiatives. The second pilot applied a similar kind of normalisation. It aimed to compare how frequently countries raised frequent topics. However, the number of words reported by countries also varies widely. For this reason, countries that provide more text can be expected to raise different topics more frequently. To account for this, the pilot normalised topic frequencies by the number of words reported by the country. The normalised values can be used to compare how frequently topics are raised in countries as a share of the total text each has entered into the database.
+</body>
+</html>
