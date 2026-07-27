@@ -63,9 +63,6 @@
     <main>
         <div class="wrap">
             <section>
-<p><strong>AI-Assisted Curation of Science, Technology and Innovation Policy Data:</strong></p>
-<p><strong>Integrating Large Language Models into Expert-Driven Data Quality Processes</strong></p>
-<p><em>David Howoldt and Antoine Kryus (OECD)</em></p>
 <h2>1. Introduction</h2>
 <p>Limited availability of comprehensive and comparable data on the design and effects of science, technology and innovation (STI) policies and their mixes across countries remains a major challenge for policymakers and analysts. This limitation reflects both the costs of collecting such data and challenges related to the unit of analysis — as complex pieces of social technology, policies do not easily lend themselves to large-scale data collection on their design, implementation and impacts (Flanagan et al., 2011; Feldman et al., 2015). <a href="https://stip.oecd.org/stip/" target="_blank" rel="noopener">The EC-OECD STIP Compass</a>, which currently has data on around 8,800 policy initiatives across 63 countries, is the most comprehensive attempt to address some of this gap. Its data feeds directly into the OECD’s <a href="https://www.oecd.org/en/publications/2025/10/oecd-science-technology-and-innovation-outlook-2025_bae3698d.html" target="_blank" rel="noopener">STI Outlook</a> and other cross-country analyses (OECD, 2025).</p>
 <p>STIP Compass data is collected through the biennial EC-OECD STIP Survey, in which government officials describe their country’s policy initiatives using free-text fields (titles, descriptions, objectives, background) and categorical taxonomies (policy themes, instrument types, and target groups). This policymaker-sourced data is invaluable but inherently heterogeneous: respondents vary in writing style, language proficiency, level of detail, and interpretation of the taxonomies. Subsequently, a policy description may sound colloquial or elaborate and technical, while theme and instrument assignments may reflect differing understandings of categories rather than genuine differences in policy design. These inconsistencies limit comparability of policy initiatives across the dataset, and they are not specific to STI policy: any data collection in which respondents describe complex objects in their own words and then assign them to a shared taxonomy produces the same stylistic variation and classification drift.</p>
@@ -146,8 +143,15 @@
 <tr>
 <td>Language clarification</td>
 <td>To find out high school students with outstanding incentive and ability and provide practical lecture and research practice to selected students.</td>
-<td>The Global Science Campus aims to identify high school students with exceptional motivation and ability, providing them with practical lectures and research practice. Additionally, it fosters internationality and professionalism among the selected students.</td>
-<td>Clarifications (red), formalism (green), and precision (blue) applied to vague wording</td>
+<td>
+  <span style="color: blue;">The Global Science Campus aims</span> to
+  <span style="color: green;">identify</span> high school students with
+  <span style="color: green;">exceptional</span>
+  <span style="color: blue;">motivation</span> and ability, providing them with practical lectures and research practice. Additionally, it
+  <span style="color: red;">fosters</span> internationality and professionalism
+  <span style="color: blue;">among the selected students</span>.
+</td>
+<td>Clarifications (blue), formalism (green), and precision (red) applied to vague wording</td>
 </tr>
 <tr>
 <td>Non-initiative detection</td>
